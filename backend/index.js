@@ -21,6 +21,9 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 
+const testRoutes = require("./routes/testRoutes");
+app.use("/api/test", testRoutes);
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
