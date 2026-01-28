@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = "RachelGupta123";
 
-async function registerUser(req, res) {
+exports.registerUser = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
@@ -30,7 +30,7 @@ async function registerUser(req, res) {
   }
 };
 
-async function loginUser(req, res) {
+exports.loginUser = async (req, res) =>{
   try {
     const { email, password } = req.body;
 
@@ -61,9 +61,4 @@ async function loginUser(req, res) {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-};
-
-module.exports = {
-  registerUser,
-  loginUser,
 };
