@@ -24,6 +24,9 @@ app.use("/api/auth", authRoutes);
 const testRoutes = require("./routes/testRoutes");
 app.use("/api/test", testRoutes);
 
+const blogRoutes = require("./routes/blogRoutes");
+app.use("/api/blogs", blogRoutes);
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
